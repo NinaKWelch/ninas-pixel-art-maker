@@ -1,42 +1,197 @@
 body {
+    margin: 0;
     text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
 }
 
-h1 {
-    font-family: Monoton;
-    font-size: 70px;
-    margin: 0.2em;
+/* Toolbar */
+div.header{
+    margin: 0;
+    padding: 0;
+    width: 28%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
 }
 
-h2 {
-    margin: 1em 0 0.25em;
+div.brand {
+    margin: 0;
+    padding: 0.25em;
+    background-color: yellow;
 }
 
-h2:first-of-type {
-    margin-top: 0.5em;
+div.brand h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5em;
 }
 
-table,
-tr,
-td {
-    border: 1px solid black;
+div.brand h1 small {
+    font-size: 0.58em;
 }
 
-table {
+div.toolbar {
+    margin: 0;
+    padding: 0;
+}
+
+div.canvas,
+div.canvas-tool,
+div.palette,
+div.palette-tool {
+}
+
+
+div.canvas h2,
+div.palette h2 {
+   font-size: 1em;
+   margin: 0;
+   padding: 2px;
+
+}
+
+
+/* Content */
+div.content {
+    margin-left: 28%;
+    padding: 0;
+    height: 1000px;
+}
+
+div.content img {
+    width: 100%;
+}
+
+div.content table {
     border-collapse: collapse;
     margin: 0 auto;
 }
 
-tr {
-    height: 20px;
+h3 {
+    position: inherit;;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1em;
 }
 
-td {
-    width: 20px;
+div.content table,
+div.content tr,
+div.content td {
+    border: 1px solid #ccc;
 }
 
-input[type=number] {
-    width: 6em;
+div.content tr {
+    height: 1em;
+}
+
+div.content td {
+    width: 1em;
+}
+
+
+/* Form inputs */
+div.canvas-tool input[type=number] {
+    width: 2em;
+    font-size: 1.1em;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+div.canvas-tool input[type=submit] {
+    background-color: #000;
+    border: 1px solid #ccc;
+    color: white;
+    letter-spacing: 0.1em;
+    margin-left: 0.2em;
+    padding: 0.2em 0.5em;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+div.palette-tool input[type=color] {
+    padding: 0;
+    width: 31px;
+    height: 31px;
+    position: absolute;
+    margin-top: -23px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+
+/* Display on different screen sizes  */
+@media screen and (min-width: 971px) {
+    div.canvas,
+    div.canvas-tool,
+    div.palette,
+    div.palette-tool {
+        display: inline;
+    }
+
+    div.canvas h2 {
+        margin: 2em 0 1em;
+    }
+
+    div.palette h2  {
+        margin: 2em 0;
+    }
+
+    div.palette-tool input[type=color] {
+        position: relative;
+        width: 62px;
+        height: 62px;
+    }
+
+}
+
+@media screen and (max-width: 970px) {
+    div.header {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding-bottom: 0.75em;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
+
+    div.canvas,
+    div.canvas-tool,
+    div.palette,
+    div.palette-tool {
+        display: inline-block;
+        margin-right: 1em;
+    }
+
+    div.canvas, div.palette {
+        margin-top: 1em;
+    }
+
+    div.canvas-tool input[type=submit],
+    div.canvas-tool input[type=number] {
+        margin-right: 0.5em;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    div.canvas,
+    div.canvas-tool,
+    div.palette,
+    div.palette-tool {
+        display: inline;
+    }
+
+    div.canvas h2,
+    div.palette h2 {
+        margin: 1em;
+    }
+
+    div.palette-tool input[type=color] {
+        position: relative;
+    }
+
 }
 
 /* CSS style guide http://udacity.github.io/frontend-nanodegree-styleguide/css.html */
+
