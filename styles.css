@@ -1,200 +1,272 @@
+
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Press+Start+2P");
+
+
 body {
     margin: 0;
-    text-align: center;
     font-family: "Courier New", Courier, monospace;
     font-size: 16px;
 }
 
-/* Toolbar */
-div.header {
+/* Page header */
+
+.header {
     margin: 0;
     padding: 0;
-    width: 28%;
-    background-color: #f1f1f1;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
 }
 
-div.brand {
+.brand {
     margin: 0;
     padding: 1em;
+    text-align: center;
     background-color: yellow;
 }
 
-div.brand h1 {
+.brand h1 {
     font-family: 'Press Start 2P', cursive;
-    font-size: 1.5em;
+    font-size: 1.45em;
 }
 
-div.brand h1 small {
+.brand h1 small {
     font-size: 0.58em;
 }
 
-div.toolbar {
-    margin: 1em 0 0;
-    padding: 0;
+.guide {
+    background-color: #f9f9f9;
+    font-weight: 600;
+    line-height: 1.4em;
 }
 
-div.canvas h2,
-div.palette h2 {
+.guide ol {
     margin: 0;
-    padding: 0;
-    font-size: 1.1em;
 }
 
+.toolbar {
 
-/* Form inputs */
-div.canvas-tool label {
-    font-size: 1.1em;
 }
 
-div.canvas-tool input[type=number] {
+.toolbar form {
+
+}
+
+.toolbar form .canvas-tool {
+
+}
+
+.palette-tool {
+
+}
+
+.canvas-tool input[type=number],
+.canvas-tool input[type=submit],
+.canvas-tool label.select-color {
+    margin-top: 15px;
+    font-size: 1.2em;
+}
+
+.canvas-tool input[type=number] {
     width: 2em;
-    font-size: 1.2em;
-    padding: 3px;
-    border: 1px solid #ccc;
+    padding: 1px;
 }
 
-div.canvas-tool input[type=submit] {
-    background-color: #000;
-    border: 1px solid #ccc;
-    font-family: "Courier New", Courier, monospace;
+.canvas-tool input[type=submit] {
+    width: 141px;
+    padding: 2px 1px 1px;
+    background-color: black;
     color: white;
-    padding: 4px;
-    font-size: 1.2em;
     cursor: pointer;
 }
 
-div.palette-tool input[type=color] {
+.palette-tool input[type=color] {
     padding: 0;
-    width: 31px;
-    height: 31px;
-    position: absolute;
-    margin-top: -21px;
+    margin-top: 15px;
     border: 1px solid #ccc;
     cursor: pointer;
 }
 
-
-
-/* Content */
-div.content {
-    margin-left: 28%;
-    padding: 0;
-    height: 1000px;
-}
-
-div.content img {
+/* Page content */
+.content img {
     width: 100%;
 }
 
-div.content table {
+.content table {
     border-collapse: collapse;
     margin: 0 auto;
 }
 
-div.content h3 {
+.content h3 {
     font-family: 'Press Start 2P', cursive;
     font-size: 1.1em;
     line-height: 1.5em;
+    text-align: center;
 }
 
-div.content table,
-div.content tr,
-div.content td {
+.content table,
+.content tr,
+.content td {
     border: 1px solid #ccc;
 }
 
-div.content tr {
+.content tr {
     height: 1em;
 }
 
-div.content td {
+.content td {
     width: 1em;
 }
 
 
-
-/* Display on different screen sizes  */
+/* Styles for different screen widths */
 @media screen and (min-width: 971px) {
-    div.canvas,
-    div.canvas-tool,
-    div.palette,
-    div.palette-tool {
-        width: 100%;
+    /* Page header */
+    .header {
+        width: 28%;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
     }
 
-    div.canvas h2 {
-        margin: 3em 0 2em;
+    .guide {
+        padding: 25px 0 25px 5%;
     }
 
-    div.palette h2  {
-        margin: 1.5em;
+    .toolbar {
+        width: 55%;
+        margin-left: 30%;
+        padding-top: 30px;
     }
 
-    div.palette-tool input[type=color] {
-        position: relative;
-        width: 62px;
-        height: 62px;
-        margin: 4em 0 1em;
+    .canvas-tool input[type=submit] {
+        line-height: 1.5em;
+    }
+
+    .canvas-tool label.select-color {
+        display: none;
+    }
+
+    .palette-tool input[type=color] {
+        width: 142px;
+        height: 70px;
+    }
+
+    /* Page content */
+    .content {
+        margin-left: 28%;
+        padding: 0;
     }
 }
 
 @media screen and (max-width: 970px) {
-    div.header {
+    /* Page header */
+    .header,
+    .guide {
+        background-color: yellow;
+    }
+
+    .header {
         width: 100%;
         height: auto;
         position: relative;
-        padding-bottom: 0.75em;
+        padding-top: 10px;
     }
 
-    div.content {
-        margin-left: 0;
-    }
-
-    div.canvas,
-    div.canvas-tool,
-    div.palette,
-    div.palette-tool {
+    .brand,
+    .guide {
         display: inline-block;
-        margin-right: 0.5em;
+        margin: 0;
+        padding: 0 0 10px;
     }
 
-    div.palette h2 {
-        margin-left: 40px;
+    .brand {
+        width: 59%;
     }
 
-    div.canvas-tool input[type=submit],
-    div.canvas-tool input[type=number] {
-        margin-left: 0.3em;
+    .guide {
+        line-height: 1.1em;
+        width: 39%;
+    }
+
+    .toolbar {
+        background-color: #ccc;
+        padding: 0 0 12px 30%;
+    }
+
+    .canvas-tool,
+    .palette-tool {
+       display: inline-block;
+    }
+
+    .canvas-tool label.select-color {
+        font-weight: bold;
+    }
+
+    .palette-tool {
+        display: inline-block;
+        position: absolute;
+    }
+
+    .canvas-tool input[type=submit] {
+       padding-bottom: 3px;
+    }
+
+    .palette-tool input[type=color] {
+        height: 34px;
+        width: 34px;
+    }
+
+    /* Page content */
+    .content {
+        margin-left: 0;
     }
 }
 
 @media screen and (max-width: 670px) {
-    div.canvas,
-    div.canvas-tool,
-    div.palette,
-    div.palette-tool {
+    /* Page header */
+    .header {
+        background-color: #ccc;
+        padding-top: 0;
+    }
+
+    .brand {
         width: 100%;
+        padding-top: 0.5em;
+        font-size: 0.75em;
     }
 
-    div.canvas h2 {
-        margin: 1em 0 1em 0;
+    .guide {
+        display: none;
     }
 
-    div.palette h2 {
-        margin: 0.5em 0 0.5em 0;
+    .toolbar {
+        padding-left: 1em;
     }
 
-    div.palette-tool input[type=color] {
-        position: relative;
-        margin-top: 1.5em;
-        width: 45px;
-        height: 45px;
+    .palette-tool {
+        position: absolute;
     }
 
+    .canvas-tool input[type=submit] {
+        width: 100px;
+    }
+
+    .canvas-tool label.select-color {
+        display: none;
+    }
+
+    .palette-tool input[type=color] {
+        margin-left: 8px;
+        height: 33px;
+        width: 33px;
+    }
+
+    /* Page content */
+    .content h3 {
+        font-size: 0.9em;
+    }
 }
+
 
 /* CSS style guide http://udacity.github.io/frontend-nanodegree-styleguide/css.html */
 
