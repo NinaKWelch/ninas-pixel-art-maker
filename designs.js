@@ -26,12 +26,11 @@ function makeGrid() {
         $(this).css('background-color', cellColor);
         TABLE.on('mouseover', 'td', function() {
             $(this).css('background-color', cellColor);
-            TABLE.on('mouseup', function() {
-                TABLE.off('mouseover');
-            });
         });
     });
-
+    $('body').on('mouseup', function() {
+         TABLE.off('mouseover');
+    });
 
     // Remove color on double click
     TABLE.on('dblclick', 'td', function() {
