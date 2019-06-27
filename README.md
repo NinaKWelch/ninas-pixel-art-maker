@@ -7,4 +7,3 @@
 ## Website
 
 * [https://ninakwelch.github.io/ninas-pixel-art-maker/](https://ninakwelch.github.io/ninas-pixel-art-maker/)
-
